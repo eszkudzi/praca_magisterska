@@ -1,0 +1,12 @@
+{
+  "name": "26315KARTLublin",
+  "version": "1.1.0",
+  "description": "",
+  "type": "overlay",
+  "format": "png",
+  "minzoom": "11",
+  "maxzoom": "14",
+  "scale": "1.000000",
+  "bounds": [22.51895903, 51.20460793, 22.63914659, 51.27312408],
+  "profile": "mercator"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Fauxbourgs",
+  "version": "1.1.0",
+  "description": "",
+  "type": "overlay",
+  "format": "png",
+  "minzoom": "13",
+  "maxzoom": "16",
+  "scale": "1.000000",
+  "bounds": [22.54664932, 51.23826448, 22.58599546, 51.25765649],
+  "profile": "mercator"
+}

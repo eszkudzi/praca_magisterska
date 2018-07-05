@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="imagetoolbar" content="no"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  <title>Dawne mapy Lublina</title>
+  <meta name="description" content="Serwis jest zbiorem map dawnych Lublina.">
+  <meta name="keywords" content="mapy dawne, Lublin, plany dawne"/>
+  <meta name="author" content="Ewa Szkudzinska">
+  
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato"> 
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/ol.css">
+  <link rel="stylesheet" type="text/css" href="css/ol-popup.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link rel="Shortcut icon" href="icons/logoLublin.png"/>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+  <script src="js/ol.js"></script>
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+	<div id="container">
+					
+			  <div id="header">
+                <div id="logo"><img src="icons/logoLublin.png" width="55px" height="55px"/></div>
+                <div id="title">Dawne mapy Lublina</div>
+                
+                <div id="nav">
+					<div id="home" title="Domyślny zasięg"><img src="icons/Earth.ico" width="45px" height="45px"/></div>
+                    <div id="measurePoligon"  title="Pomiar powierzchi"><img src="icons/measure1.png" width="40px" height="40px"/></div>
+					<div id="measureLine"  title="Pomiar odległości"><img src="icons/measure.png" width="40px" height="40px"/></div>
+					<div id="carto" title="Siatka kartograficzna"><img src="icons/earthGlobe.png" width="40px" height="40px"/></div>
+					<div id="swipeNav" title="Swipe"><img src="icons/earthGlobe2.png" width="38px" height="38px"/></div>
+                    <div id="search" title="Zmień mapę podkładową"><img src="icons/maps.png" width="45px" height="45px"/></div>
+                    <div id="menu"  title="Mapy dawne"><img src="icons/layers.png" width="47px" height="47px"/></div>
+                    
+                    <div style="clear:both;"></div>
+                    
+                </div>
+            </div>
+			
+
+				<div id="map" class="map"></div>
+				
+<div id="searching" class="well">  
+ <label class="checkbox-inline"><input type="checkbox" id="osm" checked><b>Open Street Map</b></label><br>
+<br><input id="sliderosm" type="range" min="0" max="1" step="0.1" value="1" oninput="osm.setOpacity(this.value)"><br>
+  <label class="checkbox-inline"><input type="checkbox" id="watercolor"><b>Watercolor</b></label><br>
+  <br><input id="sliderwatercolor" type="range" min="0" max="1" step="0.1" value="1" oninput="watercolor.setOpacity(this.value)"><br>
+   <label class="checkbox-inline"><input type="checkbox" id="terrain"><b>Terrain</b></label><br>
+   <br><input id="sliderterrain" type="range" min="0" max="1" step="0.1" value="1" oninput="terrain.setOpacity(this.value)"><br>
+  <label class="checkbox-inline"><input type="checkbox" id="tonerlite"><b>Toner lite</b></label><br>
+  <br><input id="slidertonerlite" type="range" min="0" max="1" step="0.1" value="1" oninput="tonerlite.setOpacity(this.value)">
+</div>
+
+
+<div id="swipeDiv"> 			
+<input id="swipe" type="range" min="1" max="100" value="50" class="slider">
+
+
+				
+</div>
+					
+				<div id="menuMenu" class="col-sm-3">
+					<div class="panel-group" id="accordion">
+					
+				<div class="btn btn-block" type="button" data-toggle="collapse" data-target="#collapseExample0" aria-expanded="true" aria-controls="collapseExample0"> Mapy sprzed I wojny światowej (do 1913) </div>
+					<div class="collapse" id="collapseExample0">
+						<div class="well">
+						
+						<label id="labellayer26308KARTLublin"><input type="checkbox" id="layer26308KARTLublin" unchecked> Plan Lublina (1829)</label><br>
+								  <div id="infoMapylayer26308KARTLublin">
+								  	<b>Autor/Wydawca:</b> Feliks Tomasz Bieczyński <br>
+									<b>Skala:</b> 1:8 000 <br>
+									<b>Data wydania:</b> 1829 <br>
+									<b>Miejsce wydania:</b> Lublin <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://bc.wbp.lublin.pl/dlibra/doccontent?id=25068">Wojewódzka Biblioteka Publiczna im. Hieronima Łopacińskiego w Lublinie</a> <br>	
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayer26308KARTLublin" type="range" min="0" max="1" step="0.1" value="1" oninput="layer26308KARTLublin.setOpacity(this.value)"><br>
+								  </div> 
+																								
+								  <label id="labellayerPlanGorodaLublina"><input type="checkbox" id="layerPlanGorodaLublina" unchecked> Plan Goroda Lublina (ok. 1884-1899)</label><br>	
+								  	<div id="infoMapylayerPlanGorodaLublina">
+									<b>Autor/Wydawca:</b>  Hromolitografiâ Štadler'' i Pattinot<br>
+									<b>Skala:</b> brak danych <br>
+									<b>Data wydania:</b> pomiędzy 1884-1899 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="https://polona.pl/item/9989658/0/">Biblioteka Narodowa</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerPlanGorodaLublina" type="range" min="0" max="1" step="0.1" value="1" oninput="layerPlanGorodaLublina.setOpacity(this.value)"><br>
+								  </div>
+						  
+						  		<label id="labellayer26312KARTLublin"><input type="checkbox" id="layer26312KARTLublin" unchecked> Plan Lublina (1901)</label><br>	
+								  	<div id="infoMapylayer26312KARTLublin">
+									<b>Autor/Wydawca:</b> Wacław Orłowski, Wydawca: druk. i lit. J. Pietrzykowskiego<br>
+									<b>Skala:</b> brak danych <br>
+									<b>Data wydania:</b> 1901 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://bc.wbp.lublin.pl/dlibra/doccontent?id=25066">Dział Zbiorów Specjalnych WBP</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayer26312KARTLublin" type="range" min="0" max="1" step="0.1" value="1" oninput="layer26312KARTLublin.setOpacity(this.value)"><br>
+								  </div>
+								  
+								 <label id="labellayer26309KARTLublin"><input type="checkbox" id="layer26309KARTLublin" unchecked> Plan Lublina (1875)</label><br>
+								  	<div id="infoMapylayer26309KARTLublin">
+									<b>Autor/Wydawca:</b> Nakładem S. Arcta<br>
+									<b>Skala:</b> 1:20 000 <br>
+									<b>Data wydania:</b> 1875 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://bc.wbp.lublin.pl/dlibra/doccontent?id=25064">Dział Zbiorów Specjalnych WBP</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayer26309KARTLublin" type="range" min="0" max="1" step="0.1" value="1" oninput="layer26309KARTLublin.setOpacity(this.value)"><br>
+								  </div>
+								  
+								 <label id="labellayerFauxbourgs"><input type="checkbox" id="layerFauxbourgs" unchecked> Plan de la ville et Fauxbourgs de Lublin (1716)</label><br>
+								  	<div id="infoMapylayerFauxbourgs">
+									<b>Autor/Wydawca:</b> C. d'Örken <br>
+									<b>Skala:</b> Około 1:3 400 <br>
+									<b>Data wydania:</b> 1716 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://bc.wbp.lublin.pl/dlibra/doccontent?id=25061">Dział Zbiorów Specjalnych WBP</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerFauxbourgs" type="range" min="0" max="1" step="0.1" value="1" oninput="layerFauxbourgs.setOpacity(this.value)"><br>
+								  </div>
+								  
+								 <label id="labellayer26310KARTLjublin"><input type="checkbox" id="layer26310KARTLjublin" unchecked> Plan goroda Ljublina s podrazdeleniem (1892)</label><br>
+								  	<div id="infoMapylayer26310KARTLjublin">
+									<b>Autor/Wydawca:</b> brak danych <br>
+									<b>Skala:</b> brak danych <br>
+									<b>Data wydania:</b> 1892 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://bc.wbp.lublin.pl/Content/25063/26310_KART-3-VI_Lublin--Plan-g-goroda-Ljublina-s--podrazdeleniem_0000.jpg">Archiwum Map WIG</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayer26310KARTLjublin" type="range" min="0" max="1" step="0.1" value="1" oninput="layer26310KARTLjublin.setOpacity(this.value)"><br>
+								  </div>
+								  
+								 <label id="labellayerWa51_1912_WGS"><input type="checkbox" id="layerWa51_1912_WGS" unchecked> Plan Lublina (1912)</label><br>
+								  	<div id="infoMapylayerWa51_1912_WGS">
+									<b>Autor/Wydawca:</b> Witold Cholewiński <br>
+									<b>Skala:</b> 1:8 500 <br>
+									<b>Data wydania:</b> 1912 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://rcin.org.pl/dlibra/doccontent?id=341">Centralna Biblioteka Geografii i Ochrony Środowiska</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerWa51_1912_WGS" type="range" min="0" max="1" step="0.1" value="1" oninput="layerWa51_1912_WGS.setOpacity(this.value)"><br>
+								  </div>
+								  
+								 <label id="labellayerPL3522PmL610"><input type="checkbox" id="layerPL3522PmL610" unchecked> Plan Lublina (1802)</label><br>
+								  	<div id="infoMapylayerPL3522PmL610">
+									<b>Autor/Wydawca:</b> Jan Kierłowicz <br>
+									<b>Skala:</b> 1:2 500 <br>
+									<b>Data wydania:</b> 1802 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://lac.lublin.pl/plany/calosci/sygn-2/">Lubelskie archiwum cyfrowe, akta miasta Lublina</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerPL3522PmL610" type="range" min="0" max="1" step="0.1" value="1" oninput="layerPL3522PmL610.setOpacity(this.value)"><br>
+								  </div>
+								  
+								  <label id="labellayerPL3522PmL210"><input type="checkbox" id="layerPL3522PmL210" unchecked> Plan Lublina (1829)</label><br>
+								  	<div id="infoMapylayerPL3522PmL210">
+									<b>Autor/Wydawca:</b> Witold Czempiński <br>
+									<b>Skala:</b> 1:10 000 <br>
+									<b>Data wydania:</b> 1879 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://lac.lublin.pl/plany/calosci/1829-witold-czempinski/#ffs-tabbed-11">Lubelskie archiwum cyfrowe, akta miasta Lublina</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerPL3522PmL210" type="range" min="0" max="1" step="0.1" value="1" oninput="layerPL3522PmL210.setOpacity(this.value)"><br>
+								  </div>
+								  
+								 <label id="labellayerPL3522PmL31810"><input type="checkbox" id="layerPL3522PmL31810" unchecked> Plan Lublina (1829)</label><br>
+								  	<div id="infoMapylayerPL3522PmL31810">
+									<b>Autor/Wydawca:</b> K. F. Kozłowski <br>
+									<b>Skala:</b> 1:8 300 <br>
+									<b>Data wydania:</b> Po 1921 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://lac.lublin.pl/plany/calosci/sygn-318/">Lubelskie archiwum cyfrowe, akta miasta Lublina</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerPL3522PmL31810" type="range" min="0" max="1" step="0.1" value="1" oninput="layerPL3522PmL31810.setOpacity(this.value)"><br>
+								  </div>
+								  
+								 <label id="labellayerPL3522PmL3101"><input type="checkbox" id="layerPL3522PmL3101" unchecked> Plan Lublina (1783)</label><br>
+								  	<div id="infoMapylayerPL3522PmL3101">
+									<b>Autor/Wydawca:</b> Feliks Bieczyński <br>
+									<b>Skala:</b> 1:5 000 <br>
+									<b>Data wydania:</b> 1852 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://lac.lublin.pl/plany/calosci/sygn-3/">Lubelskie archiwum cyfrowe, akta miasta Lublina</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerPL3522PmL3101" type="range" min="0" max="1" step="0.1" value="1" oninput="layerPL3522PmL3101.setOpacity(this.value)"><br>
+								  </div>
+								  
+								 <label id="labellayerPL3522PmL31710"><input type="checkbox" id="layerPL3522PmL31710" unchecked> Plan Lublina (1827)</label><br>
+								  	<div id="infoMapylayerPL3522PmL31710">
+									<b>Autor/Wydawca:</b> Ryszard Jaruga <br>
+									<b>Skala:</b> 1:2 250 <br>
+									<b>Data wydania:</b> 1859<br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://lac.lublin.pl/plany/calosci/sygn-317/">Lubelskie archiwum cyfrowe, akta miasta Lublina</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerPL3522PmL31710" type="range" min="0" max="1" step="0.1" value="1" oninput="layerPL3522PmL31710.setOpacity(this.value)"><br>
+								  </div>
+								  
+								<label id="labellayerPL3522PmL510"><input type="checkbox" id="layerPL3522PmL510" unchecked> Plan Lublina (1870)</label><br>
+								  	<div id="infoMapylayerPL3522PmL510">
+									<b>Autor/Wydawca:</b> Paweł Cegliński <br>
+									<b>Skala:</b> 1:3 050<br>
+									<b>Data wydania:</b> 1870 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://lac.lublin.pl/plany/calosci/1870-pawel-ceglinski/">Lubelskie archiwum cyfrowe, akta miasta Lublina</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerPL3522PmL510" type="range" min="0" max="1" step="0.1" value="1" oninput="layerPL3522PmL510.setOpacity(this.value)"><br>
+								  </div>
+								  
+								<label id="labellayerPL3522PmL810"><input type="checkbox" id="layerPL3522PmL810" unchecked> Plan Lublina (1876)</label><br>
+								  	<div id="infoMapylayerPL3522PmL810">
+									<b>Autor/Wydawca:</b> brak danych <br>
+									<b>Skala:</b> 1:2 500 <br>
+									<b>Data wydania:</b> około 1876 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://lac.lublin.pl/plany/calosci/1876-nn/">Lubelskie archiwum cyfrowe, akta miasta Lublina</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerPL3522PmL810" type="range" min="0" max="1" step="0.1" value="1" oninput="layerPL3522PmL810.setOpacity(this.value)"><br>
+								  </div>
+								  
+								 <label id="labellayerPL3522PmL32310"><input type="checkbox" id="layerPL3522PmL32310" unchecked> Plan Lublina (1878)</label><br>
+								  	<div id="infoMapylayerPL3522PmL32310">
+									<b>Autor/Wydawca:</b> Anastazy Lubomił Suligowski <br>
+									<b>Skala:</b> 1:8 200 <br>
+									<b>Data wydania:</b> 1878 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://lac.lublin.pl/plany/calosci/1878-anastazy-suligowski/">Lubelskie archiwum cyfrowe, akta miasta Lublina</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerPL3522PmL32310" type="range" min="0" max="1" step="0.1" value="1" oninput="layerPL3522PmL32310.setOpacity(this.value)"><br>
+								  </div>
+								  
+								  <label id="labellayerPL3522PmL30910"><input type="checkbox" id="layerPL3522PmL30910" unchecked> Plan Lublina (1892)</label><br>
+								  	<div id="infoMapylayerPL3522PmL30910">
+									<b>Autor/Wydawca:</b> Ludwik L. Tosio <br>
+									<b>Skala:</b> 1:8 400 <br>
+									<b>Data wydania:</b> 1892 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://lac.lublin.pl/plany/calosci/sygn-309/">Lubelskie archiwum cyfrowe, akta miasta Lublina</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerPL3522PmL30910" type="range" min="0" max="1" step="0.1" value="1" oninput="layerPL3522PmL30910.setOpacity(this.value)"><br>
+								  </div>
+								  
+								  <label id="labellayerPL3522PmL110"><input type="checkbox" id="layerPL3522PmL110" unchecked> Mapa całego miasta królewskiego Lublina (1783) </label><br>
+								  	<div id="infoMapylayerPL3522PmL110">
+									<b>Autor/Wydawca:</b> Mieczysław Pawlak <br>
+									<b>Skala:</b> 1:2 500 <br>
+									<b>Data wydania:</b> 1941 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://lac.lublin.pl/plany/calosci/1941-mieczyslaw-pawlak/">Lubelskie archiwum cyfrowe, akta miasta Lublina</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerPL3522PmL110" type="range" min="0" max="1" step="0.1" value="1" oninput="layerPL3522PmL110.setOpacity(this.value)"><br>
+								  </div><br>
+								  
+
+								
+						<div class="btn btn-block" type="button" data-toggle="collapse" data-target="#collapseExample0" aria-expanded="true" aria-controls="collapseExample0"></div>
+						</div>
+					</div>
+					
+					<div class="btn btn-block" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="true" aria-controls="collapseExample1"> Mapy z okresu I wojny światowej (1914-1918)</div>
+					<div class="collapse" id="collapseExample1">
+						<div class="well">
+						
+									<label id="labellayerPL3522PmL1210"><input type="checkbox" id="layerPL3522PmL1210" unchecked> Plan Lublina (1914)</label><br>
+								  	<div id="infoMapylayerPL3522PmL1210">
+									<b>Autor/Wydawca:</b> Mieczysław Stelmasiewicz, Kazimierz Tomorowicz <br>
+									<b>Skala:</b> 1:2 500 <br>
+									<b>Data wydania:</b> ok. 1912-1914 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://lac.lublin.pl/plany/calosci/sygn-12/">Lubelskie archiwum cyfrowe</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerPL3522PmL1210" type="range" min="0" max="1" step="0.1" value="1" oninput="layerPL3522PmL1210.setOpacity(this.value)"><br>
+								  </div>
+								  
+								  	<label id="labellayerPlanMLublina1918"><input type="checkbox" id="layerPlanMLublina1918" unchecked> Plan M. Lublina (1918)</label><br>
+								  	<div id="infoMapylayerPlanMLublina1918">
+									<b>Autor/Wydawca:</b> brak danych <br>
+									<b>Skala:</b> 1:8 400 <br>
+									<b>Data wydania:</b> 1918 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://igrek.amzp.pl/1755262">Archiwum Map WIG</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerPlanMLublina1918" type="range" min="0" max="1" step="0.1" value="1" oninput="layerPlanMLublina1918.setOpacity(this.value)"><br><br>
+								  </div>
+						
+						</div>
+					</div>	
+						
+				
+					<div class="btn btn-block" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="true" aria-controls="collapseExample2"> Dwudziestolecie międzywojenne (1919-1938)</div>
+					<div class="collapse" id="collapseExample2">
+						<div class="well">
+
+								  <label id="labellayerPlanLublina1930"><input type="checkbox" id="layerPlanLublina1930" unchecked> Plan Lublina (1930)</label><br>
+								  	<div id="infoMapylayerPlanLublina1930">
+									<b>Autor/Wydawca:</b> brak danych <br>
+									<b>Skala:</b> brak danych <br>
+									<b>Data wydania:</b> 1930 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://igrek.amzp.pl/11769558">ze zbiorów Ryszarda Hubisza</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerPlanLublina1930" type="range" min="0" max="1" step="0.1" value="1" oninput="layerPlanLublina1930.setOpacity(this.value)"><br>
+								  </div>
+
+								  <label id="labellayerPlanLublina1931"><input type="checkbox" id="layerPlanLublina1931" unchecked> Plan Wielkiego Miasta Lublina (ok. 1931)</label><br>
+								  	<div id="infoMapylayerPlanLublina1931">
+									<b>Autor/Wydawca:</b> brak danych <br>
+									<b>Skala:</b> brak danych <br>
+									<b>Data wydania:</b> 1931 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://igrek.amzp.pl/1755297">ze zbiorów Ryszarda Hubisza</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerPlanLublina1931" type="range" min="0" max="1" step="0.1" value="1" oninput="layerPlanLublina1931.setOpacity(this.value)"><br>
+								  </div>
+
+								  <label id="labellayerLublin15K1932"><input type="checkbox" id="layerLublin15K1932" unchecked> Plan Lublina (1932)</label><br>
+								  	<div id="infoMapylayerLublin15K1932">
+									<b>Autor/Wydawca:</b> brak danych <br>
+									<b>Skala:</b> 1:15 000 <br>
+									<b>Data wydania:</b> 1932 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://igrek.amzp.pl/1755145">Archiwum Map WIG</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerLublin15K1932" type="range" min="0" max="1" step="0.1" value="1" oninput="layerLublin15K1932.setOpacity(this.value)"><br>
+								  </div>
+							
+								  <label id="labellayerPlanWielkiegoMiastaLublina1935"><input type="checkbox" id="layerPlanWielkiegoMiastaLublina1935" unchecked> Plan Wielkiego Miasta Lublina (ok. 1935)</label><br>
+								  	<div id="infoMapylayerPlanWielkiegoMiastaLublina1935">
+									<b>Autor/Wydawca:</b> Polskie Towarzystwo Krajoznawcze druk: Zakl. Graf. B. Wierzbicki i S-ka <br>
+									<b>Skala:</b> 1:15 000 <br>
+									<b>Data wydania:</b> 1935 <br>
+									<b>Miejsce wydania:</b> Warszawa <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://igrek.amzp.pl/1755296">Archiwum Map WIG</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerPlanWielkiegoMiastaLublina1935" type="range" min="0" max="1" step="0.1" value="1" oninput="layerPlanWielkiegoMiastaLublina1935.setOpacity(this.value)"><br>
+								  </div>
+								
+								  <label id="labellayer26319KARTLublin"><input type="checkbox" id="layer26319KARTLublin" unchecked> Plan Lublina (1932)</label><br>
+								  	<div id="infoMapylayer26319KARTLublin">
+									<b>Autor/Wydawca:</b> Wydawnictwo Księgarni W. i J. Cholewińskich<br>
+									<b>Skala:</b> 1:10 000 <br>
+									<b>Data wydania:</b> 1932 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://bc.wbp.lublin.pl/dlibra/doccontent?id=25067">Dział Zbiorów Specjalnych WBP</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayer26319KARTLublin" type="range" min="0" max="1" step="0.1" value="1" oninput="layer26319KARTLublin.setOpacity(this.value)"><br>
+								  </div>
+								
+								  <label id="labellayer26315KARTLublin"><input type="checkbox" id="layer26315KARTLublin" unchecked> Plan Lublina (1927)</label><br>
+								  	<div id="infoMapylayer26315KARTLublin">
+									<b>Autor/Wydawca:</b> Krzyżewski, A. Oprac., Jarzyński, A. Lit. <br>
+									<b>Skala:</b> brak danych <br>
+									<b>Data wydania:</b> 1927 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://bc.wbp.lublin.pl/dlibra/doccontent?id=25069">Dział Zbiorów Specjalnych WBP</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayer26315KARTLublin" type="range" min="0" max="1" step="0.1" value="1" oninput="layer26315KARTLublin.setOpacity(this.value)"><br>
+								  </div>
+
+								  <label id="labellayerWa51_1919_WGS"><input type="checkbox" id="layerWa51_1919_WGS" unchecked> Plan Lublina (1919)</label><br>
+								  	<div id="infoMapylayerWa51_1919_WGS">
+									<b>Autor/Wydawca:</b>  Litogr. i Druk. A. Jarzyńskiego <br>
+									<b>Skala:</b> brak danych <br>
+									<b>Data wydania:</b> 1919 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://rcin.org.pl/dlibra/doccontent?id=13394">Centralna Biblioteka Geografii i Ochrony Środowiska Instytutu Geografii i Przestrzennego Zagospodarowania PAN</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerWa51_1919_WGS" type="range" min="0" max="1" step="0.1" value="1" oninput="layerWa51_1919_WGS.setOpacity(this.value)"><br>
+								  </div>
+								
+								  <label id="labellayerWa51_1935_WGS"><input type="checkbox" id="layerWa51_1935_WGS" unchecked> Plan Lublina (ok. 1935)</label><br>
+								  	<div id="infoMapylayerWa51_1935_WGS">
+									<b>Autor/Wydawca:</b> brak danych <br>
+									<b>Skala:</b> 1:10 000 <br>
+									<b>Data wydania:</b> 1935 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://rcin.org.pl/dlibra/doccontent?id=473">Centralna Biblioteka Geografii i Ochrony Środowiska Instytutu Geografii i Przestrzennego Zagospodarowania PAN</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerWa51_1935_WGS" type="range" min="0" max="1" step="0.1" value="1" oninput="layerWa51_1935_WGS.setOpacity(this.value)"><br>
+								  </div>
+								
+								  <label id="labellayerPL3522PmL1410"><input type="checkbox" id="layerPL3522PmL1410" unchecked> Orjentacyjny plan miejscowości położonych w promieniu 10 kilom. od centrum miasta (1926)</label><br>
+								  	<div id="infoMapylayerPL3522PmL1410">
+									<b>Autor/Wydawca:</b> Oddział Pomiarów Magistratu Miasta Lublina <br>
+									<b>Skala:</b> 1:75 000 <br>
+									<b>Data wydania:</b> 1926 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://lac.lublin.pl/plany/calosci/sygn-14/">Lubelskie archiwum cyfrowe, akta miasta Lublina</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerPL3522PmL1410" type="range" min="0" max="1" step="0.1" value="1" oninput="layerPL3522PmL1410.setOpacity(this.value)"><br>
+								  </div>
+
+								  <label id="labellayerPL3522PmL15101024x1285"><input type="checkbox" id="layerPL3522PmL15101024x1285" unchecked> Plan Wielkiego Miasta Lublina (1934)</label><br>
+								  	<div id="infoMapylayerPL3522PmL15101024x1285">
+									<b>Autor/Wydawca:</b> Biuro Regulacji Magistratu <br>
+									<b>Skala:</b> 1:10 000 <br>
+									<b>Data wydania:</b> 1934 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://lac.lublin.pl/plany/calosci/1934-biuro-regulacji-magistratu/">Lubelskie archiwum cyfrowe, akta miasta Lublina</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerPL3522PmL15101024x1285" type="range" min="0" max="1" step="0.1" value="1" oninput="layerPL3522PmL15101024x1285.setOpacity(this.value)"><br>
+								  </div>
+
+								  <label id="labellayerPL3522PmL2010"><input type="checkbox" id="layerPL3522PmL2010" unchecked> Orientacyjny plan terenów położonych w sferze interesów mieszkaniowych miasta Lublina (1938)</label><br>
+								  	<div id="infoMapylayerPL3522PmL2010">
+									<b>Autor/Wydawca:</b> brak danych <br>
+									<b>Skala:</b> 1:25 000 <br>
+									<b>Data wydania:</b> 1938 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://lac.lublin.pl/plany/calosci/sygn-20/">Lubelskie archiwum cyfrowe, akta miasta Lublina, akta miasta Lublina</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerPL3522PmL2010" type="range" min="0" max="1" step="0.1" value="1" oninput="layerPL3522PmL2010.setOpacity(this.value)"><br>
+								  </div>
+			
+								  <label id="labellayerPL3522PmL1810"><input type="checkbox" id="layerPL3522PmL1810" unchecked> Plan Lublina (1938)</label><br>
+								  	<div id="infoMapylayerPL3522PmL1810">
+									<b>Autor/Wydawca:</b> Biuro Pomiarów Zarządu Miejskiego <br>
+									<b>Skala:</b> 1:10 000 <br>
+									<b>Data wydania:</b> 1938 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://lac.lublin.pl/plany/calosci/1938-biuro-pomiarow-zarzadu-miejskiego/">Lubelskie archiwum cyfrowe, akta miasta Lublina</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerPL3522PmL1810" type="range" min="0" max="1" step="0.1" value="1" oninput="layerPL3522PmL1810.setOpacity(this.value)"><br>
+								  </div><br>
+						  
+							<div class="btn btn-block" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="true" aria-controls="collapseExample2"></div>
+						</div>
+					</div>	
+					  
+					  
+				<div class="btn btn-block" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="true" aria-controls="collapseExample3"> Mapy z okresu II wojny światowej (1939-1945) </div>
+					<div class="collapse" id="collapseExample3">
+						<div class="well">					  
+										
+								  <label id="labellayerVerkehrsplan15K1939"><input type="checkbox" id="layerVerkehrsplan15K1939" unchecked> Verkehrsplan Lublin (1939)</label><br>
+								  	<div id="infoMapylayerVerkehrsplan15K1939">
+									<b>Autor/Wydawca:</b> Generalstab des Heeres 9. Abt. <br>
+									<b>Skala:</b> 1:15 000 <br>
+									<b>Data wydania:</b> 1939 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://igrek.amzp.pl/1755376">ze zbiorów Ryszarda Hubisza</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerVerkehrsplan15K1939" type="range" min="0" max="1" step="0.1" value="1" oninput="layerVerkehrsplan15K1939.setOpacity(this.value)"><br>
+								  </div>
+
+								  <label id="labellayerLublin15K1943"><input type="checkbox" id="layerLublin15K1943" unchecked> Plan Lublina (1943)</label><br>
+								  	<div id="infoMapylayerLublin15K1943">
+									<b>Autor/Wydawca:</b> brak danych <br>
+									<b>Skala:</b> brak danych <br>
+									<b>Data wydania:</b> 1943 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://igrek.amzp.pl/11764518">Archiwum Map WIG</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerLublin15K1943" type="range" min="0" max="1" step="0.1" value="1" oninput="layerLublin15K1943.setOpacity(this.value)"><br>
+								  </div>
+
+								  <label id="labellayerGSGS4435LUBLIN25K1943"><input type="checkbox" id="layerGSGS4435LUBLIN25K1943" unchecked> Plan Lublina (1943)</label><br>
+								  	<div id="infoMapylayerGSGS4435LUBLIN25K1943">
+									<b>Autor/Wydawca:</b>Geographical Section, General Staff (opracowanie: Wojskowy Instytut Geograficzny) <br>
+									<b>Skala:</b> 1:25 000 <br>
+									<b>Data wydania:</b> 1943 <br>
+									<b>Miejsce wydania:</b> Wielka Brytania <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://igrek.amzp.pl/16603">Archiwum Map WIG</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerGSGS4435LUBLIN25K1943" type="range" min="0" max="1" step="0.1" value="1" oninput="layerGSGS4435LUBLIN25K1943.setOpacity(this.value)"><br>
+								  </div>
+
+								  <label id="labellayerM3434ALYUBLIN1941"><input type="checkbox" id="layerM3434ALYUBLIN1941" unchecked> Plan LYUBLIN (1941)</label><br>
+								  	<div id="infoMapylayerM3434ALYUBLIN1941">
+									<b>Autor/Wydawca:</b> brak danych <br>
+									<b>Skala:</b> 1:50 000<br>
+									<b>Data wydania:</b> 1941 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://igrek.amzp.pl/1758730">Archiwum Map WIG</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerM3434ALYUBLIN1941" type="range" min="0" max="1" step="0.1" value="1" oninput="layerM3434ALYUBLIN1941.setOpacity(this.value)"><br>
+								  </div>
+
+								  <label id="labellayerLublinNawierzchnia1939"><input type="checkbox" id="layerLublinNawierzchnia1939" unchecked> Nawierzchnia ulic (1939)</label><br>
+								  	<div id="infoMapylayerLublinNawierzchnia1939">
+									<b>Autor/Wydawca:</b> brak danych <br>
+									<b>Skala:</b> 1:10 000 <br>
+									<b>Data wydania:</b> 1939 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://bc.wbp.lublin.pl/dlibra/doccontent?id=25058">Dział Zbiorów Specjalnych WBP</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerLublinNawierzchnia1939" type="range" min="0" max="1" step="0.1" value="1" oninput="layerLublinNawierzchnia1939.setOpacity(this.value)"><br>
+								  </div>
+
+								  <label id="labellayerPL3522PmL2410"><input type="checkbox" id="layerPL3522PmL2410" unchecked> Plan Lublina (1940)</label><br>
+								  	<div id="infoMapylayerPL3522PmL2410">
+									<b>Autor/Wydawca:</b> brak danych <br>
+									<b>Skala:</b> 1:15 000 <br>
+									<b>Data wydania:</b> około 1940 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://lac.lublin.pl/plany/calosci/1940-nn/">Lubelskie archiwum cyfrowe, akta miasta Lublina</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerPL3522PmL2410" type="range" min="0" max="1" step="0.1" value="1" oninput="layerPL3522PmL2410.setOpacity(this.value)"><br>
+								  </div>
+
+								  <label id="labellayerfuhrerdurchlublinWGS"><input type="checkbox" id="layerfuhrerdurchlublinWGS" unchecked> Plan centrum Lublina (1942)</label><br>
+								  	<div id="infoMapylayerfuhrerdurchlublinWGS">
+									<b>Autor/Wydawca:</b> brak danych <br>
+									<b>Skala:</b> brak danych <br>
+									<b>Data wydania:</b> 1942 <br>
+									<b>Miejsce wydania:</b> Kraków <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://lac.lublin.pl/plany/calosci/1942-nn/">Lubelskie archiwum cyfrowe</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerfuhrerdurchlublinWGS" type="range" min="0" max="1" step="0.1" value="1" oninput="layerfuhrerdurchlublinWGS.setOpacity(this.value)"><br>
+								  </div>
+
+								  <label id="labellayerPL3522PmL2510"><input type="checkbox" id="layerPL3522PmL2510" unchecked> Plan Lublina (1944)</label><br>
+								  	<div id="infoMapylayerPL3522PmL2510">
+									<b>Autor/Wydawca:</b> brak danych <br>
+									<b>Skala:</b> 1:15 000 <br>
+									<b>Data wydania:</b> 1944 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://lac.lublin.pl/plany/calosci/1944-nn/">Lubelskie archiwum cyfrowe, akta miasta Lublina</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerPL3522PmL2510" type="range" min="0" max="1" step="0.1" value="1" oninput="layerPL3522PmL2510.setOpacity(this.value)"><br>
+								  </div><br>
+						  
+							<div class="btn btn-block" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="true" aria-controls="collapseExample3"></div>
+						</div>
+					</div>	
+					  
+				<div class="btn btn-block" type="button" data-toggle="collapse" data-target="#collapseExample4" aria-expanded="true" aria-controls="collapseExample4"> Mapy wydane po II wojnie światowej (od 1946) </div>
+					<div class="collapse" id="collapseExample4">
+						<div class="well">	
+						  
+
+								  <label id="labellayerPL3522PmL2610"><input type="checkbox" id="layerPL3522PmL2610" unchecked> Plan Lublina (1947)</label><br>
+								  	<div id="infoMapylayerPL3522PmL2610">
+									<b>Autor/Wydawca:</b> Biuro Pomiarów Zarządu Miejskiego w Lublinie <br>
+									<b>Skala:</b> 1:10 000 <br>
+									<b>Data wydania:</b> 1947 <br>
+									<b>Miejsce wydania:</b> brak danych <br>
+									<b>Źródło mapy:</b> <a target="_blank" href="http://lac.lublin.pl/plany/calosci/sygn-26/">Lubelskie archiwum cyfrowe, akta miasta Lublina</a> <br>
+								  <b>Przeźroczystość mapy:</b><br><input id="sliderlayerPL3522PmL2610" type="range" min="0" max="1" step="0.1" value="1" oninput="layerPL3522PmL2610.setOpacity(this.value)"><br>
+								  </div>
+
+						</div>
+					</div>	
+					  
+					</div>
+					
+					
+				
+			</div>
+			</div>
+						
+
+	
+            <div id="footer" class="panel-footer">
+        	<div id="XY"><b>Współrzędne geograficzne: &nbsp;</b></div>
+        		<div id="coordinates"> 
+        			<div id="mouse-position"></div>
+        		</div>	
+				
+                <div style="clear:both;"></div>
+            </div>
+			
+			</div>
+			
+	<div id="window_overlay"></div>
+	<div id="window_entrance" class="window_content">
+    <a target="_blank" href="#" class="window_close">&times;</a>
+	<br>
+	<h3>Witaj w serwisie mapowym poświęconym mapom dawnym Lublina!</h3>
+	<br><br>
+	
+	Strona powstała w ramach pracy magisterskiej Ewy Szkudzińskiej na Wydziale Nauk o Ziemii i Gospodarki Przestrzennej UMCS w Lublinie. <br><br>
+	Serwis mapowy opracowano z pomocą następujących źródeł:<br>  
+	<a target="_blank" href="http://bc.wbp.lublin.pl/">Wojewódzka Biblioteka Publiczna im. Hieronima Łopacińskiego w Lublinie, </a> <br>
+	<a target="_blank" href="https://polona.pl/">Biblioteka Narodowa, </a><br>
+	<a target="_blank" href="http://rcin.org.pl/">Centralna Biblioteka Geografii i Ochrony Środowiska, </a> <br>
+	<a target="_blank" href="http://lac.lublin.pl/">Lubelskie Archiwum Cyfrowe, </a> <br>
+	<a target="_blank" href="http://igrek.amzp.pl/">Archiwum Map WIG</a> <br>
+	
+	</div>
+		
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.6/proj4.js"></script>
+	<script src="js/scripts.js"></script>
+</body>
+</html>

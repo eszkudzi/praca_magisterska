@@ -1,0 +1,12 @@
+{
+  "name": "m34034a",
+  "version": "1.1.0",
+  "description": "",
+  "type": "overlay",
+  "format": "png",
+  "minzoom": "10",
+  "maxzoom": "13",
+  "scale": "1.000000",
+  "bounds": [22.47271881, 51.13871142, 22.77301331, 51.35638238],
+  "profile": "mercator"
+}

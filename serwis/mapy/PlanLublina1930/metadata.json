@@ -1,0 +1,12 @@
+{
+  "name": "PlanLublina1930",
+  "version": "1.1.0",
+  "description": "",
+  "type": "overlay",
+  "format": "png",
+  "minzoom": "11",
+  "maxzoom": "15",
+  "scale": "1.000000",
+  "bounds": [22.53033851, 51.20933213, 22.62221252, 51.27463733],
+  "profile": "mercator"
+}

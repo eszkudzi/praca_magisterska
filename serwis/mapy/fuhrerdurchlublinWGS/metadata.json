@@ -1,0 +1,12 @@
+{
+  "name": "fuhrerdurchlublinWGS",
+  "version": "1.1.0",
+  "description": "",
+  "type": "overlay",
+  "format": "png",
+  "minzoom": "13",
+  "maxzoom": "17",
+  "scale": "1.000000",
+  "bounds": [22.54328743, 51.24223715, 22.57665992, 51.25499747],
+  "profile": "mercator"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "PlanMLublina1918",
+  "version": "1.1.0",
+  "description": "",
+  "type": "overlay",
+  "format": "png",
+  "minzoom": "12",
+  "maxzoom": "16",
+  "scale": "1.000000",
+  "bounds": [22.53109764, 51.21860000, 22.59926719, 51.27359649],
+  "profile": "mercator"
+}

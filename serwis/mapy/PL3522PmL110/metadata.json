@@ -1,0 +1,12 @@
+{
+  "name": "PL3522PmL110",
+  "version": "1.1.0",
+  "description": "",
+  "type": "overlay",
+  "format": "png",
+  "minzoom": "12",
+  "maxzoom": "16",
+  "scale": "1.000000",
+  "bounds": [22.52145548, 51.21832982, 22.60878242, 51.26678129],
+  "profile": "mercator"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "26310KARTLjublin",
+  "version": "1.1.0",
+  "description": "",
+  "type": "overlay",
+  "format": "png",
+  "minzoom": "12",
+  "maxzoom": "14",
+  "scale": "1.000000",
+  "bounds": [22.53114716, 51.22150493, 22.61696872, 51.27115957],
+  "profile": "mercator"
+}

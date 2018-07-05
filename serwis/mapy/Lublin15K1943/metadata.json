@@ -1,0 +1,12 @@
+{
+  "name": "Lublin15K1943",
+  "version": "1.1.0",
+  "description": "",
+  "type": "overlay",
+  "format": "png",
+  "minzoom": "13",
+  "maxzoom": "16",
+  "scale": "1.000000",
+  "bounds": [22.54581700, 51.24192829, 22.57726749, 51.25421684],
+  "profile": "mercator"
+}

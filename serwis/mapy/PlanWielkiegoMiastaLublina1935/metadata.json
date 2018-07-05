@@ -1,0 +1,12 @@
+{
+  "name": "PlanWielkiegoMiastaLublina1935",
+  "version": "1.1.0",
+  "description": "",
+  "type": "overlay",
+  "format": "png",
+  "minzoom": "11",
+  "maxzoom": "16",
+  "scale": "1.000000",
+  "bounds": [22.51644905, 51.20152887, 22.62843107, 51.28438454],
+  "profile": "mercator"
+}

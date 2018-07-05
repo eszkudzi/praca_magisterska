@@ -1,0 +1,12 @@
+{
+  "name": "Wa51_1935_WGS",
+  "version": "1.1.0",
+  "description": "",
+  "type": "overlay",
+  "format": "png",
+  "minzoom": "11",
+  "maxzoom": "16",
+  "scale": "1.000000",
+  "bounds": [22.50535565, 51.20264593, 22.63363488, 51.27817882],
+  "profile": "mercator"
+}

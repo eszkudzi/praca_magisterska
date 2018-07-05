@@ -1,0 +1,12 @@
+{
+  "name": "Verkehrsplan15K1939",
+  "version": "1.1.0",
+  "description": "",
+  "type": "overlay",
+  "format": "png",
+  "minzoom": "11",
+  "maxzoom": "16",
+  "scale": "1.000000",
+  "bounds": [22.49844548, 51.19096396, 22.61917439, 51.28396222],
+  "profile": "mercator"
+}

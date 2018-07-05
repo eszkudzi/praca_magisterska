@@ -1,0 +1,12 @@
+{
+  "name": "GSGS4435LUBLIN25K1943",
+  "version": "1.1.0",
+  "description": "",
+  "type": "overlay",
+  "format": "png",
+  "minzoom": "11",
+  "maxzoom": "15",
+  "scale": "1.000000",
+  "bounds": [22.51431579, 51.18717595, 22.63618281, 51.28937549],
+  "profile": "mercator"
+}
